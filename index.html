@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call of Dragons Cavalry Speed Sync Tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-banner">
+      <p class="eyebrow">Call of Dragons Utility</p>
+      <h1>Call of Dragons Cavalry Speed Sync Tool</h1>
+      <p class="subtitle">Tune five cavalry marches until their total movement speed percentages line up with a shared target.</p>
+    </section>
+
+    <section class="command-panel">
+      <div class="control-row">
+        <label class="field">
+          <span>Target Speed %</span>
+          <div class="input-wrap">
+            <input id="target-speed-input" type="number" min="0" step="0.1" value="40" inputmode="decimal">
+            <span class="suffix">%</span>
+          </div>
+        </label>
+
+        <div class="status-row">
+          <div class="status-pill" id="sync-indicator">Sync Watch</div>
+          <p class="status-copy" id="status-copy">Match each march to the target speed to keep the full set aligned.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="march-grid" id="march-grid" aria-label="March configurations"></section>
+
+    <section class="results-shell">
+      <div class="results-head">
+        <div>
+          <p class="results-label">Speed Sync</p>
+          <h2>March comparison</h2>
+        </div>
+        <p class="results-note">Difference is calculated as march speed minus target speed. Positive values are too fast, negative values are too slow.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>March</th>
+              <th>Total Speed %</th>
+              <th>Difference</th>
+              <th>Indicator</th>
+            </tr>
+          </thead>
+          <tbody id="results-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
